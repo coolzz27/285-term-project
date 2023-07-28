@@ -25,7 +25,7 @@
 \linespread{1.1}
 
 \pagestyle{fancy}
-\lhead{\hmwkAuthorName}
+\lhead{\hmwkGroupName}
 \chead{\hmwkClass\ : \hmwkTitle}
 \rhead{\firstxmark}
 \lfoot{\lastxmark}
@@ -37,40 +37,36 @@
 \setlength\parindent{0pt}
 
 %
-% Create Problem Sections
+% Create Section Headers
 %
 
-\newcommand{\enterProblemHeader}[1]{
-    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
-    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+\newcommand{\startSectionHeader}[1]{
+\nobreak\extramarks{#1}{}\nobreak{}
 }
 
-\newcommand{\exitProblemHeader}[1]{
-    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
-    \stepcounter{#1}
-    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+\newcommand{\enterSectionHeader}[1]{
+    \nobreak\extramarks{}{#1 continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitSectionHeader}[0]{
+\nobreak\extramarks{\currentSectionName (continued)}{\currentSectionName continued on next page\ldots}\nobreak{}
+\nobreak\extramarks{\currentSectionName}{}\nobreak{}
 }
 
 \setcounter{secnumdepth}{0}
-\newcounter{partCounter}
-\newcounter{homeworkProblemCounter}
-\setcounter{homeworkProblemCounter}{1}
-\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
 
 %
 % Homework Problem Environment
 %
 
-\newenvironment{homeworkProblem}[1][-1]{
-    \ifnum#1>0
-        \setcounter{homeworkProblemCounter}{#1}
-    \fi
-    \section{Problem \arabic{homeworkProblemCounter}}
-    \setcounter{partCounter}{1}
-    \enterProblemHeader{homeworkProblemCounter}
+\newenvironment{homeworkProblem}{
+\section{\currentSectionName}
+\enterSectionHeader{\currentSectionName}
 }{
-    \exitProblemHeader{homeworkProblemCounter}
+\exitSectionHeader{}
 }
+
 
 %
 % Homework Details
@@ -79,10 +75,13 @@
 %   - Author
 %
 
-\newcommand{\hmwkTitle}{Term Project - Rollercasters}
+\newcommand{\hmwkTitle}{Term Project - Rollercoasters}
 \newcommand{\hmwkClass}{MATH2850J}
-\newcommand{\hmwkAuthorName}{\textbf{Group 14}}
+\newcommand{\hmwkAuthor}{Guo shitong Ren zhixing Wang qingyu Yuan yilei Zhang kangqi}
+\newcommand{\hmwkDate}{\today}
+\newcommand{\hmwkGroupName}{\textbf{Group 14}}
 
+%
 % Title Page
 %
 
@@ -91,9 +90,9 @@
     \textmd{\textbf{\hmwkTitle}}\\
     \vspace{3in}
 }
+\author{\hmwkAuthor}
+\date{\hmwkDate}
 
-\author{\hmwkAuthorName}
-\date{}
 
 \renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
 
@@ -105,12 +104,21 @@
 \maketitle
 
 \pagebreak
-\begin{abstract}
-    In this study, we mainly focus on two aspects of roller coaster research, namely the impact of track shape on passengers' experience and the impact of seating position on passengers' experience. In brief, we first focus on comparing and analyzing the pros and cons of various roller coaster models, and we simplify various realistic shapes into different curve models in mathematics for analysis. Combining mathematical formulas and physical principles, we try to find a type of ideal roller coaster that can give people a sense of both thrill and comfort, that is to say, to avoid the situation where the roller coaster will experience a sudden change in G-force when it enters a circular track from a flat track. Based on this problem, we analyze and calculate three models, namely circular track, the one that can provide constant G-force and Cornu spirals. Thus we find that the first model cannot solve the existing problem, the second model can provide constant G-force during the roller coaster’s journey, but still cannot solve the problem of sudden change at the beginning and end. Cornu spirals can provide g acceleration at the beginning and end, which is consistent with the acceleration of the roller coaster on a flat track, and it is a very smooth curve because it has a high derivative. Further, if we want to design a roller coaster model that is safe and comfortable throughout the journey, we can consider combining the bottom of Cornu spirals with the upper part of the model that can provide constant G-force, thus obtaining a constant G-force throughout the journey and no sudden change in G-force at the beginning and  the  end.If we want to design a thrilling and comfortable one. On the other hand, we study the impact of seating position on passenger experience on a circular vertical loop. We found that compared with passengers sitting in the middle, passengers sitting in the front and back feel more obvious, that is, more stimulating.
-\end{abstract}
-\pagebreak
-\section{Introduction of circular vertical loops}
+\nobreak\extramarks{Contents}{}\nobreak{}
+\tableofcontents
 
+\pagebreak
+\newcommand{\currentSectionName}{Abstract}
+\startSectionHeader{\currentSectionName}
+\begin{homeworkProblem}
+In this study, we mainly focus on two aspects of roller coaster research, namely the impact of track shape on passengers' experience and the impact of seating position on passengers' experience. In brief, we first focus on comparing and analyzing the pros and cons of various roller coaster models, and we simplify various realistic shapes into different curve models in mathematics for analysis. Combining mathematical formulas and physical principles, we try to find a type of ideal roller coaster that can give people a sense of both thrill and comfort, that is to say, to avoid the situation where the roller coaster will experience a sudden change in G-force when it enters a circular track from a flat track. Based on this problem, we analyze and calculate three models, namely circular track, the one that can provide constant G-force and Cornu spirals. Thus we find that the first model cannot solve the existing problem, the second model can provide constant G-force during the roller coaster’s journey, but still cannot solve the problem of sudden change at the beginning and end. Cornu spirals can provide g acceleration at the beginning and end, which is consistent with the acceleration of the roller coaster on a flat track, and it is a very smooth curve because it has a high derivative. Further, if we want to design a roller coaster model that is safe and comfortable throughout the journey, we can consider combining the bottom of Cornu spirals with the upper part of the model that can provide constant G-force, thus obtaining a constant G-force throughout the journey and no sudden change in G-force at the beginning and  the  end.If we want to design a thrilling and comfortable one. On the other hand, we study the impact of seating position on passenger experience on a circular vertical loop. We found that compared with passengers sitting in the middle, passengers sitting in the front and back feel more obvious, that is, more stimulating.
+\end{homeworkProblem}
+
+\renewcommand{\currentSectionName}{Introduction}
+\startSectionHeader{\currentSectionName}
+\pagebreak
+\begin{homeworkProblem}
+\subsection{Introduction of circular vertical loops}
     The track of the Flip Flap Railway is a perfect circle. The radius of it is $R$.
 
     The net force is $\frac{mv^2}{r}$, where $r$ is the radius of curvature, which is the reciprocal of curvature.
@@ -191,10 +199,10 @@
 \pagebreak
 
 
-\indent{Some alternative vertical loops}
+\indent{Some alternative vertical loops: }
 We can see from above that,since the sudden change of G-force will have a negative impact on people's health and it can't meet the needs of both thrilling and comfortable,the circular roller coaster loop has been replaced with some other alternative vertical loops.Some of them are designed to offer constant centripetal acceleration,and the others are designed to offer constant G-force.But both of them can' get rid of the disadvantageous of the sudden change of  G-force at the beginning and the end.So,the designers come up with the Cornu spiral model.\\
-\section{Introduction of Cornu spirals }
-\subsection{The definition of Cornu spirals}
+\subsection{Introduction of Cornu spirals }
+\subsubsection{The definition of Cornu spirals}
 The Fresnel Integrals,known as $C(t)$ and $S(t)$,where
 $$
 C(t)=\int_{0}^{t}cos(\frac{\pi}{2}s^2)ds
@@ -215,11 +223,11 @@ $$
         \label{1}
         \caption{The Cornu spiral}
     \end{figure}
-\subsection{Properties of Cornu spirals }
+\subsubsection{Properties of Cornu spirals }
 
     To find the radius of curvature, we need to find the curvature, which is given by:
-    \begin{equation}
-        \kappa(s) &= \frac{x’(s)y’’(s) - x’’(s)y’(s)}{(x’(s)^2 + y’(s)^2)^{3/2}}
+\begin{equation}
+\kappa(s) &= \frac{x’(s)y’’(s) - x’’(s)y’(s)}{(x’(s)^2 + y’(s)^2)^{3/2}}
     \end{equation}  
     where x’(s), x’’(s), y’(s), \text{ and } y’’(s) \text{ are the first and second derivatives of } x(s) \text{ and } y(s) \text{ with respect to } s.\ \
 To find these derivatives, we need to use the chain rule and the properties of the Fresnel integrals. We have
@@ -242,12 +250,12 @@ Similarly, we have
 $$ y’’(s) &= -\frac{1}{4} \sqrt{\frac{1}{\pi s^3}} (\sin \frac{s}{\pi} - 2 s \cos \frac{s}{\pi})$$
 
 Then,we plug these derivatives into the formula for curvature and simplify it ,and finally we get  the radius of curvature is inversely proportional to the distance s from the center.
-\subsection{Advantageous from mathematical perspective}
+\subsubsection{Advantageous from mathematical perspective}
 From the mathematical perspective,the sudden change of G-force can be interpreted as an immediate transition from one radius of curvature to another,which will give a
 continuous, smooth track, but with discontinuous second derivatives. \cite{ref1}So,to tackle these problem,we should make the curve  smoother and smoother.We know that a curve with a parametrization  whose second derivatives are continuous,is considered to be smoother than the one with a parametrization  whose second derivatives are discontinuous.\\
 Then,we can see from above that the first derivatives and the second derivatives are both continuous because they are the results of the elementary of some simple continuous functions.To be more general,since the Cornu spiral can be expressed using continuous and differentiable functions sine and cosine, it is infinitely differentiable ,meaning quite high derivatives.\\
 
-\subsection{Advantageous from  physics perspective}
+\subsubsection{Advantageous from  physics perspective}
 By applying the Cornu spirals model,we can adjust the G-forces by scaling.We know that we can obtain G-force by
 \begin{equation}
     m\frac{v^2}{R}=N-mgcos(\theta)
@@ -274,30 +282,37 @@ Using the parametrization of The Fresnel Integrals,we know that $y(s)$ can be se
     \end{figure}
 Regardless of the  scalar factor,the G-force at the beginning and the end of the loop is found to be always equal to exactly 1g,which means there won't be a sudden change on G-force when the train enters and exits the vertical loop.\\
 
+\end{homeworkProblem}
 
+\renewcommand{\currentSectionName}{Analysis}
+\startSectionHeader{\currentSectionName}
 \pagebreak
-\section{Analysis of the difference in G-force among different positions}
+\begin{homeworkProblem}
+\subsection{Analysis of the difference in G-force among different positions}
 Since the roller coaster is a whole, the position of each person relative to the coaster as a whole can be approximated as a prime point.
 We can reduce a roller coaster to a rope of uniform mass whose internal tension can be varied to maintain a particular shape of the rope.\\
-Suppose the mass of a unit length is $\rho$. The whole length is R$\phi$.\\
-Since
+Suppose the mass of a unit length is $\rho$. The whole length of the roller coaster is R$\phi$.
+\\Since geometrical relation:
 $$
 \mathrm{d}l= R\mathrm{d}\theta\ 
 $$
-Hence,
+\\where $\theta$ is the angle between the line joining the microelement and the center of the circle and the vertical line
+Hence, the mass of a small segment of microelements
 $$
         \mathrm{d}m=\rho R\mathrm{d}\theta
         $$
-\\ The moment of inertia od the rope can be shown as:
+\\ The moment of inertia of the rope can be shown as:
 $$
-\I =\int  R^2 \cdot dm = R^3\rho\phi.
+I =\int  R^2 \cdot dm = R^3\rho\phi.
 $$
 where
     $$
     \phi_1+\phi_2=\phi=\mathrm{const}.
     $$
 
-    If there is no friction force, by energy conservation:
+$\phi_1$ is the angle between the line joining the apex of the left end of the rope and the center of the circle and the vertical line
+\\$\phi_2$ is the angle between the line joining the apex of the right end of the rope and the center of the circle and the vertical line
+\\If there is no friction force, by energy conservation:
 
     $$
     E=\rho R\phi R(1-\cos\varphi)+\frac{1}{2}\rho R^3\phi\dot{\theta}^2
@@ -307,6 +322,7 @@ where
     E=\rho R\phi R(1-\cos(\phi_2-\frac{\phi}{2}))+\frac{1}{2}\rho R^3\phi\dot{\phi_2}^2
     $$
     According to the angular momentum theorem, $ \frac{dL}{dt}=\tau_{ext}$
+$$ I\frac{d\theta}{dt}=\tau_{ext}$$
     $$
     -\rho\phi Rg^2\sin(\phi_2-\frac{\phi}{2})=\rho R^3\phi\ddot{\phi}_2
     $$
@@ -322,7 +338,7 @@ where
     T\mathrm{d}\theta+N+\mathrm{d}mg\cos\theta=\mathrm{d}m\omega^2r
     $$
     \\Take a frame of reference with angular accelerating counter-clockwise:
-    \\We have compensated force: $F=-m \ddot{\phi}_2 R$
+\\We have compensated inertia force: $F=-m \ddot{\phi}_2 R$
     \\ tangential phase forces are balanced, and hence we get:
     $$
    \mathrm{d}T=g\sin\theta\mathrm{d}m + \mathrm{d} F
@@ -334,53 +350,53 @@ With boundary equation:
     $$
     T|_{\phi_2}=T|_{\phi_1}=0
     $$
-
+Therefore, we can get the relation between $\theta$ and $T$
     \begin{equation}
         T(\theta)=\rho gR(\cos{\phi_2}-\cos\theta)+\rho gR\sin(\phi_2-\frac{\phi}{2})(\phi_2-\theta)
     \end{equation}
-
+Hence,
     \begin{equation}
-        a_{people feel}=\frac{N}{\mathrm{d}m}=\omega^2r-g\cos\theta-T\frac{\mathrm{d}\theta}{\mathrm{d}m}=\omega^2r-g\cos\theta-\frac{T}{\rho R}
+G-Froce_s=a_{people feel}=\frac{N}{\mathrm{d}m}=\omega^2r-g\cos\theta-T\frac{\mathrm{d}\theta}{\mathrm{d}m}=\omega^2r-g\cos\theta-\frac{T}{\rho R}
     \end{equation}
 
     \begin{enumerate}
 
         \item[\textbf{Case 1:}] 
-        
+The leftmost passenger is at the apex.
         $\theta=0,\phi_1=0,\phi_2=\phi,T\approx 0$.
-
-        \item[\textbf{Case 2:}] 
         
+        \item[\textbf{Case 2:}] 
+The rightmost passenger is at the apex.
         $\theta=0,\phi_1=\phi,\phi_2=0,T\approx 0$.
 
         \item[\textbf{Case 3:}] 
-        
+The middle passenger is at the apex.
         $\theta=0,\phi_1=\frac{\phi}{2},\phi_2=\frac{\phi}{2},T\approx \rho gR(\cos\frac{\phi}{2}-1)$.
 
         Substituting Eq.(2) into the equation above, we have
 
         $$
-        a_{\lambda}=\omega^2_{\mathrm{top}}r-g\cos\frac{\phi}{2}
+a_{left}=a_{right}=\omega^2_{\mathrm{side top}}r-g\cos{\frac{\phi}{2}-\frac{\phi}{2}}=\omega^2_{\mathrm{side top}}R-g
         $$
 
         $$
-        \Delta \omega^2=\frac{2g}{R}(1-\cos\frac{\phi}{2})
+\Delta \omega^2=\omega^2_{\mathrm{side top}}-\omega^2_{\mathrm{middle top}}=\frac{2g}{R}(1-\cos\frac{\phi}{2})
         $$
 
         $$
-        a_{\lambda}=\omega^2r-2g(1-\cos\frac{\phi}{2})-g\cos\frac{\phi}{2}=\omega^2r-2g+g\cos\frac{\phi}{2}<\omega^2r-g
+a_{middle}=\omega^2_{\mathrm{side top}}r-\Delta \omega^2r-g\cos\frac{\phi}{2}
         $$
-
-        
-
-        Total length is $\phi$.
-
-        So the accelerate of the two sides is larger than that of the middle.
+$$ =\omega^2_{\mathrm{side top}}r-2g(1-\cos\frac{\phi}{2})-g\cos\frac{\phi}{2}=\omega^2_{\mathrm{side top}}R-2g+g\cos\frac{\phi}{2}$$
+$$<\omega^2_{\mathrm{side top}}R-g =a_{left}=a_{right}$$
+So the accelerate of the two sides is larger than that of the middle.
 \end{enumerate}
 
+\end{homeworkProblem}
 
+\renewcommand{\currentSectionName}{Verification}
+\startSectionHeader{\currentSectionName}
 \pagebreak
-\section{Mathematical verification with mathimatica}
+\begin{homeworkProblem}
 \subsection{Theorem analysis}
 Constant G-force rollercoasters are those providing the constant normal force during the process. There's a previous article \cite{ref1} that has conducted the numerical calculations for constant G-force rollercoasters and got some graphs. However, the detailed calculation process is not performed. Thus, the verification done by Mathematica follows.
 
@@ -540,15 +556,65 @@ The result follows:
     \end{figure}  
 
 We can see that though the shape of cycloid is very similar to the one of constant G-force track, the G-force in the cycloid track at the peak is nearly $30\%$ larger than the constant G-force in our model. Meanwhile, the sudden change in G-force is unavoidable for both constant G-force track and cycloid track. This brings us back to the clothoid track, which provides a smooth change in G-force in the process.
+\end{homeworkProblem}
+
+\renewcommand{\currentSectionName}{Exploration}
+\startSectionHeader{\currentSectionName}
+\pagebreak
+\begin{homeworkProblem}
+
+For Möbius curve,(a roller coaster like Möbius curve)
+
+$$\varphi (t)=
+    \left(\begin{array}{cccc}
+            (R+S\cos \frac{t}{2} )cost \\
+            (R+S\cos \frac{t}{2})sint  \\
+            S\sin(\frac{t}{2})
+        \end{array}\right)
+    ,t\in (0,4\pi ]
+$$
+
+Using mathematica to plot the curve and calculate the curavature $\kappa$ with t.
+
+supposing no friction:
+
+\
+
+$\frac{1}{2}mv_{0}^{2}=\frac{1}{2}mv^{2}+\sin(\frac{t}{2})mg  $
+
+\
+
+$G-forces=\frac{v^{2}\kappa}{g}=\frac{(v_{0}^{2}-2\sin(\frac{t}{2})g)\kappa}{g}$
+
+\
+
+Let R=40, S=10, which means a fall of 20 meters, a radius at about 40 meters, with speed of 72 km/h, const speed
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{p5-1.jpg}
+\end{figure}
+Having g force like
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{p5-2.jpg}
+\end{figure}
+
+the change of accelerator is very large, which means people may enjoy themselve very much,but the value of acceleration is not very large , which means it is safe and will not cause injury.
+\end{homeworkProblem}
+
+\renewcommand{\currentSectionName}{References}
+\startSectionHeader{\currentSectionName}
+\pagebreak
 \begin{thebibliography}{99}  
+\addcontentsline{toc}{section}{References}
 
 \bibitem{ref1} G. Birchak. Physics of the flip flap rollercoaster. https://mathsciencehistory.com/2020/01/19/physics-ofthe-flip-flap-rollercoaster/, 2020. Web. Accessed July 8th, 2022.
 
 \bibitem{ref2} K. Brey. Geek challenge: Constant g-force coaster loops. https://www.dmcinfo.com/latestthink-ing/blog/id/228/geek-challenge-constant-g-force-coaster-loops, 2010. Web. Accessed July 8th, 2022.
 
-\bibitem{ref3} A.-M. Pendrill. Kanonen (Photo 14/31). Roller Coaster database: https://rcdb.com/2905.htm#p=12169,
+\bibitem{ref3} A.-M. Pendrill. Kanonen (Photo 14/31). Roller Coaster database: https://rcdb.com/2905.htm\#p=12169,
 2005. Web. Accessed July 8th, 2022.
 
 \bibitem{ref4} A.-M. Pendrill. Rollercoaster loop shapes. Physics Education, 40(6):517–521, 2005.
