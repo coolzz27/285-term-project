@@ -8,6 +8,7 @@
 \usepackage{tikz}
 \usepackage[plain]{algorithm}
 \usepackage{algpseudocode}
+\usepackage{indentfirst}
 
 \usetikzlibrary{automata,positioning}
 
@@ -34,7 +35,7 @@
 \renewcommand\headrulewidth{0.4pt}
 \renewcommand\footrulewidth{0.4pt}
 
-\setlength\parindent{0pt}
+\setlength\parindent{1em}
 
 %
 % Create Section Headers
@@ -276,7 +277,7 @@ where $v_{0}$ is the initial velocity,$h$ is the instant height,and $\theta$ is 
 Using the parametrization of The Fresnel Integrals,we know that $y(s)$ can be seen as $h$ here,and $\frac{y(s)}{\sqrt{x^2(s)+y^2(s)}}$ equals to $cos(\theta)$ here.So,we can plot the curve using mathematica.,which can be seen in Figure \ref{3}
 \begin{figure}[H]
         \centering
-        \includegraphics[width=0.4\textwidth]{clothoid_model.png}
+\includegraphics[width=0.4\textwidth]{4.png}
         \label{3}
         \caption{The Cornu spiral model}
     \end{figure}
@@ -474,7 +475,7 @@ The result of graph follows, which is very close to the one in the article.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\textwidth]{4.png}
+\includegraphics[width=0.4\textwidth]{10.png}
     \caption{The Constant G-force Track Shape in The Article (Non-friction)}
     \end{figure}  
 
@@ -505,24 +506,23 @@ The result of graph follows, which is also close to the one in the article and t
 \subsection{Verification of cycloid track at non-friction condition}
 The article also mentioned the generated shape of constant G-force rollercoaster track is similar to the shape of cycloid. The verification follows.
 
-We first need to generate a cycloid that fits the track we found in Figure 5. The general expression for a cycloid is
-$$ \left\{
-\begin{aligned}
-x & = at-b\sin t \\
-y & = a-b\cos t \\
-\end{aligned}
-\right.
+We first need to generate a cycloid that matches the track we identified in Figure 5. A cycloid can be generally expressed using the following parametric equations:
 
-$$ 
-The parameter equation we found is expressed as:
-
-$$ \left\{
+\begin{equation}
 \begin{aligned}
-x & = -5.55t-12.67\sin t \\
-y & = -12.67\cos t +12.67 \\
+x & = at-b\sin t, \
+y & = a-b\cos t.
 \end{aligned}
-\right.
-$$
+\end{equation}
+
+Based on our findings, the parametric equations for our cycloid are:
+
+\begin{equation}
+\begin{aligned}
+x & = -5.55t-12.67\sin t, \
+y & = -12.67\cos t +12.67.
+\end{aligned}
+\end{equation}
 
 In order to calculate the acceleration in the cycloid shape track, we use the relation between curvature and radius, $\kappa=\frac{1}{R}$. The relation between the parameter $t$ in the cycloid equation and the angle between the gravity and the normal force $\theta$ is deduced as:
 
@@ -562,29 +562,30 @@ We can see that though the shape of cycloid is very similar to the one of consta
 \startSectionHeader{\currentSectionName}
 \pagebreak
 \begin{homeworkProblem}
+\subsection{Exciting Choice}
 
 For Möbius curve,(a roller coaster like Möbius curve)
 
 $$\varphi (t)=
-    \left(\begin{array}{cccc}
-            (R+S\cos \frac{t}{2} )cost \\
-            (R+S\cos \frac{t}{2})sint  \\
-            S\sin(\frac{t}{2})
-        \end{array}\right)
-    ,t\in (0,4\pi ]
+\left(\begin{array}{cccc}
+(R+S\cos \frac{t}{2} )cost\\
+(R+S\cos \frac{t}{2})sint \\
+S\sin(\frac{t}{2})
+\end{array}\right)
+,t\in (0,4\pi ]
 $$
 
 Using mathematica to plot the curve and calculate the curavature $\kappa$ with t.
 
 supposing no friction:
-
+\\We have energy conservation:
 \
 
 $\frac{1}{2}mv_{0}^{2}=\frac{1}{2}mv^{2}+\sin(\frac{t}{2})mg  $
 
 \
-
-$G-forces=\frac{v^{2}\kappa}{g}=\frac{(v_{0}^{2}-2\sin(\frac{t}{2})g)\kappa}{g}$
+Hence,
+$G-forces=\frac{v^{2}\kappa}{g}=\frac{(v_{0}^{2}-2S\sin(\frac{t}{2})g)\kappa}{g}$
 
 \
 
@@ -602,6 +603,38 @@ Having g force like
 \end{figure}
 
 the change of accelerator is very large, which means people may enjoy themselve very much,but the value of acceleration is not very large , which means it is safe and will not cause injury.
+
+\subsection{Comfortable Choice}
+If we want to design a roller coaster model that is safe and comfortable throughout the journey, we can consider combining the bottom of Cornu spirals with the upper part of the model that can provide constant G-force.So,we can take the bottom portion of a clothoid loop and add on the top portion of a constant g-force loop.which will keep the G-force from dropping,like shown in the Figure \ref{4}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{clothoid_model.png}
+    \label{4}
+    \caption{The Cornu spiral model}
+\end{figure}
+But we have to ensure the curvature of different portions should be the same to avoid G-force being discontinuous.
+
+\end{homeworkProblem}
+
+\renewcommand{\currentSectionName}{Conclusion}
+\startSectionHeader{\currentSectionName}
+\pagebreak
+\begin{homeworkProblem}
+Research on roller coaster acceleration emphasizes the critical role of acceleration in shaping the rider experience. Positive acceleration on the way up creates a sense of excitement and weightlessness, while negative acceleration on the way down increases the sense of thrill by creating a sense of fear and an adrenaline rush. Lateral acceleration during sharp turns enhances the sense of immersion for passengers.
+
+
+While acceleration is a key factor in creating a thrill ride, safety considerations are also critical. Excessive acceleration can cause discomfort to riders and even pose a threat to their safety. As a result, roller coaster designers must carefully balance acceleration levels, employ appropriate restraint systems, and adhere to safety regulations to ensure a safe and enjoyable experience for all riders.
+
+
+In this article, the authors refer to the first flip flap raily and study the acceleration of a roller coaster passing through the bottom when it is in a full circle, and conclude that the bottom acceleration is unlikely to be 12G, but should be 6G, which refutes the existing viewpoints.
+The authors then calculated the Cornu solenoid, and found that this curve can be flattened (G-forces do not vary much or flatten out) to make the roller coaster enter or exit the vertical loop to ensure the experience of the tourists. In the first two analyses, each passenger is considered independent, i.e., each compartment does not affect each other
+In order to be closer to the real situation, the authors then considered the roller coaster as a continuum and used the continuous rope model to analyze the G-forces received by different passengers when they passed the highest point of the orthogonal circle.
+Afterwards, the authors analyzed the famous American roller coaster, which is characterized by a constant G-value. The authors analyzed the curve trajectory with and without friction, and found that the track is a pendulum when there is no friction, and the track is approximated to be a pendulum when there is friction, but they could not come up with an analytical exact solution, and the authors plotted the approximate track using Euler integrals and mathematica software, and analyzed the G-forces of it
+Finally, the authors tried to construct a new track by considering the Möbius ring and analyzing the G-forces on the passengers at constant velocity, and concluded that this track has a large variation of acceleration but not high value, and has a simple and straightforward construction, which has the potential to become a new roller coaster track.
+
+
+Limitations: it is worth noting that this study did not consider the factor of air resistance, but this has a huge impact during the high speed of the roller coaster; no other conditions were considered except problem3 which considered the effect of internal forces between different as on the G-forces of the passengers, which may have an effect; finally, although the author considered friction in problem4, it was considered that the friction is linearly related, however, the friction generated by centrifugal force in the factual situation also affects the motion of the roller coaster, and such a simplification may lead to inaccurate results; finally, the roller coaster has moment of inertia, which further may reduce the forward speed of the roller coaster in the smallest radius part of the loop but we ignore this in our analysis.
+
 \end{homeworkProblem}
 
 \renewcommand{\currentSectionName}{References}
